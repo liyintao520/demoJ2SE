@@ -15,14 +15,10 @@ git push origin master
 
 
 四、如何进行拉取github上的项目和修改了代码如何更新
-
 	1、拉取代码是最简单的，如下命令就搞定，选取你要拉取到的目标目录
-	
 		git clone https://github.com/love-somnus/Spring.git
-	
 	2、修改代码提交，比第一次上传代码简单点，如下
 		git add .
 		git commit -a -m 'version 1.2.3'
 		git push origin master 
-		
 	这里还是要输入用户名、密码的
