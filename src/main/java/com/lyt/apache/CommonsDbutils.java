@@ -21,6 +21,8 @@ import org.apache.commons.dbutils.handlers.MapListHandler;
  * @author liyintao
  * 测试数据库链接，并把数据分别放到list和 map中
  * 在本地新建数据库 demo 建表
+ *  @SuppressWarnings({ "rawtypes", "unchecked" })
+ *  @SuppressWarnings("rawtypes") rawtypes是说传参时也要传递带泛型的参数
  */
 public class CommonsDbutils {
 	public static void main(String[] args) {
@@ -30,13 +32,13 @@ public class CommonsDbutils {
 		String username = "root";
 		String password = "root";
 		DbUtils.loadDriver(jdbcDriver);//加载驱动
-		String sql = "select id,name from person";
-		//****************************转换成list  ************************************
+		String sql = "select id,name,age from person";
+		//****************************转换成list  默认值是 0 ************************************
 		try {
 			conn = DriverManager.getConnection(url,username, password);
 			QueryRunner qr = new QueryRunner();
 			@SuppressWarnings({ "rawtypes", "unchecked" })
-			List results = qr.query(conn, sql, new BeanListHandler(Person.class));
+			List results = qr.query(conn, "select id,name from person", new BeanListHandler(Person.class));
 			for (int i = 0; i < results.size(); i++) {
 				Person p = (Person) results.get(i);
 				System.out.println("age: " + p.getAge() + ",name:" + p.getName());
@@ -46,12 +48,12 @@ public class CommonsDbutils {
 		} finally {
 			DbUtils.closeQuietly(conn);
 		}
-		//****************************转换成map  ************************************
+		//****************************转换成map  map默认值为null************************************
 		try {
 			conn = DriverManager.getConnection(url, username, password);
 			QueryRunner qr = new QueryRunner();
 			@SuppressWarnings("rawtypes")
-            List results = (List) qr.query(conn, sql, new MapListHandler());
+            List results = (List) qr.query(conn, "select name,age from person", new MapListHandler());
 			for (int i = 0; i < results.size(); i++) {
 				@SuppressWarnings("unchecked")
                 Map<String,Object> map = (Map<String,Object>) results.get(i);

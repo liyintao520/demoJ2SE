@@ -8,3 +8,10 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 
+加密解密的方法  不是太了解CommonsCodec.java
+
+
+
+建议：
+每个类 写上作用 更容易入手，
+J2SE中好像少Thread线程这块、
