@@ -10,6 +10,12 @@ import java.lang.annotation.*;
 
 加密解密的方法  不是太了解CommonsCodec.java
 
+com.lyt.array.Sudoku.java这个类 不会  暂时不要看 没用
+这个包下面是不是还缺少好多算法 比如 快速查找法  递归法 等等
+
+Ftp的应用工具类
+/demoJ2SE/src/main/java/com/lyt/connect/FTPClientHelper.java
+/demoJ2SE/src/main/java/com/lyt/connect/SFTPUtil.java
 
 
 建议：
