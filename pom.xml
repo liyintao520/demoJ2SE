@@ -117,9 +117,18 @@
             <artifactId>jsch</artifactId>
             <version>0.1.51</version>
         </dependency>
-		
-		
-		
+		<!-- 加入dom4j 依赖包 -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<!-- Xpath 依赖包 -->
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.1.6</version>
+        </dependency>
 		
 		
 		

@@ -6,10 +6,10 @@ import org.apache.commons.lang.time.DateFormatUtils;
 
 /** 
  * @Title: LoopDate.java 
- * @Package com.somnus.date 
+ * @Package com.lyt.date 
  * @Description: TODO
- * @author Somnus
- * @date 2015年5月18日 下午9:04:01 
+ * @author 李银涛
+ * @date 2016年10月31日 下午3:04:01 
  * @version V1.0 
  */
 public class LoopDate {
