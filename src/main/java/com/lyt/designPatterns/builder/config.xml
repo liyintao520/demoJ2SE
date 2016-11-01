@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>  
+	<!-- 天使角色建造器：具体建造者 -->
+    <angelBuilder>com.lyt.designPatterns.builder.AngelBuilder</angelBuilder>
+    <!-- 恶魔角色建造器：具体建造者 -->  
+    <devilBuilder>com.lyt.designPatterns.builder.DevilBuilder</devilBuilder>  
+    <!-- 英雄角色建造器：具体建造者 -->  
+    <heroBuilder>com.lyt.designPatterns.builder.HeroBuilder</heroBuilder>  
+</config>

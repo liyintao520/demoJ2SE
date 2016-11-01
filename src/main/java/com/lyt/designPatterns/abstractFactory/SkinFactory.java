@@ -13,21 +13,39 @@ public interface SkinFactory {
 	public TextField createTextField();
 	public ComboBox createComboBox();
 }
-//Spring皮肤工厂：具体工厂
+/**
+ * Spring皮肤工厂：具体工厂
+ * @author liyintao
+ */
 class SpringSkinFactory implements SkinFactory{
 	@Override
 	public Button createButton() {
 		return new SpringButton();
 	}
-
 	@Override
 	public TextField createTextField() {
 		return new SpringTextField();
 	}
-
 	@Override
 	public ComboBox createComboBox() {
 		return new SpringComboBox();
 	}
-	
+}
+/**
+ * Liyintao皮肤工厂：具体工厂
+ * @author liyintao
+ */
+class LiyintaoSkinFactory implements SkinFactory{
+	@Override
+	public Button createButton() {
+		return new LiyintaoButton();
+	}
+	@Override
+	public TextField createTextField() {
+		return new LiyintaoTextField();
+	}
+	@Override
+	public ComboBox createComboBox() {
+		return new LiyintaoComboBox();
+	}
 }

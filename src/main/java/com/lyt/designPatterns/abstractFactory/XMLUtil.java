@@ -4,6 +4,30 @@ import java.io.File;
 
 import org.dom4j.Document;
 import org.dom4j.io.SAXReader;
+/**
+ * 该方法用于从XML配置文件中提取图表类型，并返回类型名  
+ * @author liyintao
+ */
+public class XMLUtil {
+	/**
+	 * 该方法用于从XML配置文件中提取图表类型，并返回类型名  
+	 * @return
+	 * @throws Exception
+	 */
+	public static Object getBean() throws Exception{
+		SAXReader reader = new SAXReader();
+		String path = XMLUtil.class.getClassLoader().getResource("com/lyt/designPatterns/abstractFactory/config.xml").getPath();
+		Document document = reader.read(new File(path));
+		//获取XML文档中的内容：<config><className>内容</className></config>
+		//Document的selectNodes(String XPath)方法 还要有jaxen 包的依赖做支持
+		String cName = document.selectSingleNode("/config/className").getText();
+		//通过类名生成实例对象并将其返回
+		Class<?> c = Class.forName(cName);//Class.forName("")返回的是类
+		//Class.forName("").newInstance()返回的是object 
+		Object obj = c.newInstance();//newInstance( )静态方法来实例化对象
+		return obj;
+	}
+}
 
 /** 
  * @Title: XMLUtil.java 
@@ -28,18 +52,3 @@ import org.dom4j.io.SAXReader;
  * @author liyintao
  *
  */
-public class XMLUtil {
-	//该方法用于从XML配置文件中提取图表类型，并返回类型名  
-	public static Object getBean() throws Exception{
-		SAXReader reader = new SAXReader();
-		String path = XMLUtil.class.getClassLoader().getResource("com/lyt/designPatterns/abstractFactory/config.xml").getPath();
-		Document document = reader.read(new File(path));
-		//获取XML文档中的内容：<config><className>内容</className></config>
-		//Document的selectNodes(String XPath)方法 还要有jaxen 包的依赖做支持
-		String cName = document.selectSingleNode("/config/className").getText();
-		//通过类名生成实例对象并将其返回
-		Class<?> c = Class.forName(cName);
-		Object obj = c.newInstance();
-		return obj;
-	}
-}
