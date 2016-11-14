@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>  
+	<!-- 帮助命令类：具体命令类  -->
+    <firstCommand>com.lyt.designPatterns.command.HelpCommand</firstCommand>
+    <!-- 最小化命令类：具体命令类 -->
+    <secondCommand>com.lyt.designPatterns.command.MinimizeCommand</secondCommand> 
+</config>

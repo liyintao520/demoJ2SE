@@ -17,6 +17,9 @@ Ftp的应用工具类
 /demoJ2SE/src/main/java/com/lyt/connect/FTPClientHelper.java
 /demoJ2SE/src/main/java/com/lyt/connect/SFTPUtil.java
 
+com.lyt.json 包下面的东西 设计到json与string之间的转换以及序列化和反序列化.
+
+
 
 建议：
 每个类 写上作用 更容易入手，
